@@ -1,9 +1,8 @@
 *{
 	background-color: ;
 	--primary-color-dark: darkgreen;
-	--primary-color-light: green;
-
-	--font-primary : black;
+	--primary-color-light: #22ac61;
+/*	--font-primary : black;*/
 }
 
 body{
@@ -16,17 +15,19 @@ body{
 }
 
 .main{
-	width: 100%;
 	max-width: 1500px;
-	min-height: 500px;
 }
 
 .navbar{
 	display: flex;
+	background-color: white;
+	position: fixed;
+	width: 100%;
+	max-width: 1500px	;
 
 	.logo{
-		width: 30%;
-		padding: 16px;
+		width: 40%;
+		padding: 14px;
 		display: flex;
 		justify-content: right;
 		img{
@@ -37,14 +38,17 @@ body{
 	}
 
 	.navbar-menu{
+/*		border: 1px solid black;*/
 		width: 70%;
 		font-family: "Ubuntu", sans-serif;
 		font-weight: 400;
 		font-style: normal;
 
 		ul{
+/*			border: 1px solid black;*/
+
 			margin: 0 0 0 70px;
-			padding: 0 0 0 40px;
+/*			padding: 0 0 0 40px;*/
 			height: 100%;
 			width: 80%;
 
@@ -58,12 +62,17 @@ body{
 
 
 			li{
+/*				border: 1px solid black;*/
 				font-size: 18px;
 				list-style: none;
 				padding: 40px 20px;
 				text-align: center;
 
 				a{
+/*					border: 1px solid black;*/
+
+/*					padding: 40px 20px;*/
+
 					text-decoration: none;
 					color: black;
 					width: 100%;
@@ -82,9 +91,13 @@ body{
 	width: 100%;
 	padding: 0;
 
+	margin-top: 130px;
+
+	background-color: black;
 	background-repeat: no-repeat;
 	background-size: 100%;
-
+/*	box-shadow: inset 0px 0px 85px rgba(0, 0, 0, 1.00);*/
+/*	background-blend-mode: /;*/
 
 	.content{
 		color: #fff;
@@ -143,7 +156,7 @@ body{
 
 			h4{
 				font-size: 25px;
-				padding: 20px 30px 0 100px;
+				padding: 20px 30px 0 140px;
 
 			}
 			blockquote{
@@ -261,7 +274,7 @@ body{
 		.services-list{
 			h4{
 				margin: 0;
-				margin-left: 10px 	;
+				margin-left: 42	px 	;
 			}
 			ul{
 				margin: 0;
@@ -385,3 +398,4 @@ body{
 	padding: 25px ;
 	text-align: center;
 }
+
