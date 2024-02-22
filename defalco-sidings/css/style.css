@@ -24,14 +24,17 @@ body{
 	position: fixed;
 	width: 100%;
 	max-width: 1500px	;
+	z-index: 2;
 
 	.logo{
 		width: 40%;
-		padding: 14px;
+		padding: 10px 10px 10px 0;
 		display: flex;
-		justify-content: right;
+/*		justify-content: left;*/
+		margin: 0px 10px 0px 140px;
+
 		img{
-			margin-right: 20px;
+/*			margin-right: 20px;*/
 			width: 140px;
 			height: 80px;
 		}
@@ -194,7 +197,8 @@ body{
 
 			a{
 				color: rgb(66, 130, 69,1.0) ;
-				padding: 0 100px 10px 100px;
+				margin: 0 100px 10px 140px;
+/*				padding: 0 100px 10px 100px;*/
 			}
 
 		}
@@ -226,7 +230,7 @@ body{
 			font-size: 16PX	;
 			font-weight: 800;
 			color: white;
-			padding: 25px 17px;
+			padding: 20px 30px;
 		}
 	}
 }
@@ -279,7 +283,7 @@ body{
 			ul{
 				margin: 0;
 				margin-right: 20px;
-				padding: 20px 10px 20px 40px;
+				padding: 20px 10px 20px 0px;
 
 				li {
 					list-style-type: none;
@@ -343,24 +347,26 @@ body{
 	.left{
 		width: 20%;
 		align-content: center;
-		padding-right: 40px;
 		padding-top: 50px;
 
 		.logo{
-			width: 50%;
-			justify-content: right;
-			margin-left: auto;
-			margin-right: auto;
+/*			width: 50%;*/
+
+			padding: 10px 10px 10px 10px;
+
 
 			img{
-				width: 140px;
+				margin-left: 90px;
+/*				width: 140px;*/
+/*				height: 80px;*/	
+				width: 60%;
 				height: 80px;
-				width: 100%;
 			}
 		}
 		.social{
 			display: flex;
-			justify-content: center;
+/*			justify-content: center;*/;
+			padding-left: 120px;
 
 			.icon{
 				margin: 10px;
@@ -378,7 +384,7 @@ body{
 	.right{
 		width: 70%;
 		display: flex;
-		padding: 0 10px;
+		padding: 0 40px;
 
 		.col{
 			min-width: 20%;
@@ -387,6 +393,10 @@ body{
 
 			h5{
 				padding-left: 25px;
+			}
+			a{
+				text-decoration: none;
+				color: black;
 			}
 		}
 	}
