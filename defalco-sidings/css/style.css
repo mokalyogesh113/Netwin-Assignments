@@ -15,7 +15,7 @@ body{
 }
 
 .main{
-	max-width: 1500px;
+/*	max-width: 1500px;*/
 }
 
 .navbar{
@@ -378,7 +378,7 @@ body{
 				border-radius: 30PX	;
 
 			}
-		}
+		}	
 	}	
 
 	.right{
