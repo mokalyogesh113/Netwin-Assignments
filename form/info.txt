@@ -1,0 +1,18 @@
+{
+  "firstName": "Ruchika",
+  "lastName": "Deore",
+  "gender": "female",
+  "email": [
+    "ruchikadeore06@gmail.com"
+  ],
+  "phone": "123456789",
+  "address": [
+    {
+      "street": "XYZ",
+      "city": "Chandwad",
+      "country": "In",
+      "state": "MH",
+      "zipcode": "4242"
+    }
+  ]
+}

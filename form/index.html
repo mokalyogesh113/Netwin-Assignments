@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form | Assignment-2</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="main-container">
+        <form id="my-form" class="my-form">
+            <!--  NAME -->
+            <label for="firstName">First Name: </label>
+            <input type="text" id="firstName" name="firstName" class="required-text" required pattern="[A-Za-z ]+" title="Only Alphabets are allowed"  />
+            <br /><br />
+
+            <label for="lastName">Last Name: </label>
+            <input type="text" id="lastName" name="lastName" class="required-text" required pattern="[A-Za-z]+" title="Only Alphabets are allowed"  />
+            <br /><br />
+
+            <!-- GENDER -->
+            <label for="gender">Gender:</label>
+            <input type="radio" name="gender" id="male" value="male" required checked />
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female" />
+            <label for="female">Female</label>
+            <br /><br />
+
+            <!-- EMAIL -->
+            <div id="emails">
+                <div class="email-div">
+                    <label for="emailAddress">Email Address: </label>
+                    <input type="email" id="email" name="email" placeholder="@example.com"
+                        pattern=".+@.+\..+" title="Please enter a valid email address."
+                        />
+                    <input type="button" id="addEmailBtn" class="addBtn" value="+" />
+                    <br /><br />
+                </div>
+            </div>
+
+
+            <!-- PHONE -->
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" title="Please enter 10 digit phone number" />
+            <br /><br />
+
+
+            <!-- ADDRESS -->
+            <div id="addresses">
+                <header class="address-title">Address</header>
+                <br />
+                <div class="address-div" id="defaultAddress">
+
+                    <label for="street">Street: </label>
+                    <input type="text" id="street" name="street" pattern="[A-Za-z0-9 ]+" title="Only Alphanumeric values are allowed"  />
+                    <br />
+
+                    <label for="city">City: </label>
+                    <input type="text" id="city" name="city" pattern="[A-Za-z ]+" title="Only Alphabets are allowed"  />
+                    <br />
+
+                    <label for="country">Country: </label>
+                    <input type="text" id="country" name="country" pattern="[A-Za-z ]+" title="Only Alphabets are allowed"  />
+                    <br />
+
+                    <label for="state">State: </label>
+                    <input type="text" id="state" name="state" pattern="[A-Za-z ]+" title="Only Alphabets are allowed"  />
+                    <br />
+
+                    <label for="zip">Zip Code: </label>
+                    <input type="number" id="zipcode" name="zipcode" pattern="[0-9]{5}"
+                    title="Please Enter 5 digit Pincode Only"  />
+                    <br />
+                    <br />
+                </div>
+                <div>
+                    <input type="button" id="addAddressBtn" class="addBtn" value="Add Address"></input>
+                    <br /><br />
+                </div>
+
+
+            </div>
+
+            <button type="submit">Submit Form</button>
+            <input type="button" id="importBtn" value="Import Data"/>
+        </form>
+
+        <!-- Display the form data -->
+        <div id="display-data">
+            <table id="display-table" border="1">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Gender</th>
+                        <th>Email Address</th>
+                        <th>Phone Number</th>
+                        <th>Address</th>
+                        <!-- <th>Street</th>
+                        <th>City</th>
+                        <th>Country</th>
+                        <th>State</th>
+                        <th>Zip Code</th> -->
+                        <th>Action </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be added dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="handleImport.js"></script>
+</body>
+
+</html>
