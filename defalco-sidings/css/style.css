@@ -15,7 +15,7 @@ body{
 }
 
 .main{
-/*	max-width: 1500px;*/
+	max-width: 1500px;
 }
 
 .navbar{
@@ -51,9 +51,7 @@ body{
 /*			border: 1px solid black;*/
 
 			margin: 0 0 0 70px;
-/*			padding: 0 0 0 40px;*/
 			height: 100%;
-			width: 80%;
 
 			display: flex;
 			flex-direction: row;
@@ -66,7 +64,7 @@ body{
 
 			li{
 /*				border: 1px solid black;*/
-				font-size: 18px;
+				font-size: 14px;
 				list-style: none;
 				padding: 40px 20px;
 				text-align: center;
