@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery | Assignment 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>jQuery Assignment 1</h1>
+
+    <!-- FORM -->
+    <form id="my-form">
+        <div id="input-container">
+            <div class="input-field">
+                <h3>User Data</h3>
+                <input type="text" name="firstName" class="firstName" placeholder="Enter First Name">
+                <input type="text" name="lastName" class="lastName" placeholder="Enter Last Name">
+            </div>
+        </div>
+        <div id="button-container">
+            <input type="button" id="addBtn" class="formBtn" value="Add">
+            <input type="submit" id="submitBtn" class="formBtn" value="Submit">
+        </div>
+    </form>
+
+    <!-- TABLE -->
+    <div id="display-table" >
+        <table border="1">
+            <thead>
+                <tr>
+
+                    <td>Sr No.</td>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <!-- TEMPLATE -->
+    <script type="text/template" id="template">
+        <div class="input-field">
+            <input type="text" name="firstName" class="firstName" placeholder="Enter First Name">
+            <input type="text" name="lastName" class="lastName" placeholder="Enter Last Name">
+            <input type="button" value="-" class="dltBtn">
+        </div>
+    </script>
+
+    <!-- SCRIPTS -->
+    <script src="jQuery/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
