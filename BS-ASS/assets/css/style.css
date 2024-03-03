@@ -1,0 +1,213 @@
+* {
+    --color-black: #000;
+    --color-red: #d52a04;
+    --color-red-dark: #a81f00;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/****************************
+*         HEADER            *
+****************************/
+
+.ym-header {
+    height: 80vh;
+    /* border: 1px solid black; */
+    background-image: url("../img/header/banner-costruttori.jpg");
+}
+
+/****************************
+*         NAVBAR            *
+****************************/
+
+.ym-navbar {
+    background-color: var(--color-black);
+    color: aliceblue;
+    padding: 0;
+    text-transform: uppercase;
+
+    .nav-brand {
+        /* border: 1px solid black; */
+        width: 200px;
+        padding: 10px;
+    }
+
+    ul {
+        height: 100%;
+        font-weight: 400;
+
+        li {
+            display: flex;
+            align-items: center;
+        }
+
+        li:hover {
+            background-color: var(--color-red);
+        }
+    }
+}
+
+.fixed-nav {
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    z-index: 100;
+}
+
+/****************************
+*        Sections           *
+****************************/
+
+section {
+    padding-top: 100px;
+
+    .section-title {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 50px;
+
+        h2 {
+            font-size: 32px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            position: relative;
+            letter-spacing: 2px;
+            margin-bottom: 50px;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            display: block;
+
+            width: 100px;
+            height: 3px;
+            left: calc(50% - 50px);
+            bottom: -10px;
+
+            background: var(--color-red-dark);
+        }
+
+        p {
+            align-self: center;
+            margin-bottom: 0;
+            width: 80%;
+            font-size: 20px;
+            letter-spacing: 1.2px;
+        }
+    }
+}
+
+/****************************
+*        Gallery            *
+****************************/
+
+.ym-gallery-section {
+    padding-bottom: 50px;
+    background: url("../img/plain-backdrop-decorative-gray-textured.jpg");
+
+    .section-title h2 {
+        color: #fff;
+    }
+    .section-title h2::after {
+        background-color: #fff;
+        width: 50px;
+        left: calc(50% - 25px);
+    }
+
+    /* .ym-gallery-item{
+
+        
+        img{
+            object-fit: cover;
+            
+        }
+    } */
+}
+
+/****************************
+*      Laboratory           *
+****************************/
+
+.ym-laboratory-section {
+    .accreditation {
+        line-height: 10px;
+    }
+}
+
+.ym-rnd-section {
+    background-color: slategrey;
+
+    .box {
+        height: 150px;
+        width: 150px;
+        border: 1px solid black;
+        margin: 10px 20px;
+    }
+}
+
+.ym-rft-section {
+    .box {
+        height: 150px;
+        width: 150px;
+        border: 1px solid black;
+        margin: 10px 20px;
+    }
+}
+
+.box {
+    min-height: 150px;
+    /* width: 150px; */
+    border: 1px solid black;
+    /* margin: 10px 20px; */
+}
+
+.ym-contact-us {
+    .contact-info {
+        padding: 30px 0 30px 70px;
+        background-color: var(--color-red);
+        color:wheat;
+        
+        h4 {
+            margin-bottom: 30px;
+            margin-top: 30px;
+            
+        }
+        p {
+            line-height: 5px;
+        }
+    }
+}
+
+
+.ym-news-letter-section{
+    background-color: rebeccapurple;
+
+}
+
+
+.ym-footer{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    .footer-img{
+        width: 200px;        
+        margin-bottom: 30px;
+    }
+    p{
+        color: grey;
+        font-size: 12px;
+        margin: 0;
+        padding-top: 0;
+    }
+    
+
+
+}
