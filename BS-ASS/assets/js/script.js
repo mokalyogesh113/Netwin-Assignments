@@ -25,9 +25,16 @@ $(function () {
 
 
     // GALLERY + Button
+    let gallrryBtnVal = ["+" , "-"]; 
+    let currentBtnVal = 0;
     $("#gallery-hidden").hide();
     $("#gallery-plus-btn").on("click", function () {
         $("#gallery-hidden").slideToggle();
+
+
+        currentBtnVal^=1;
+        $("#gallery-plus-btn").html(gallrryBtnVal[currentBtnVal])
+        
     })
 
 

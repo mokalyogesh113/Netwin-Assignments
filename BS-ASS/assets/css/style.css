@@ -16,9 +16,36 @@ body {
 
 .ym-header {
     height: 80vh;
-    /* border: 1px solid black; */
     background-image: url("../img/header/banner-costruttori.jpg");
+
+    
+    
+    
+    
+    
+    
+    
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /****************************
 *         NAVBAR            *
@@ -75,11 +102,12 @@ section {
             font-size: 32px;
             font-weight: bold;
             text-transform: uppercase;
-            margin-bottom: 20px;
+            
+            margin-bottom: 40px;
             padding-bottom: 20px;
-            position: relative;
+
+            position: relative;  
             letter-spacing: 2px;
-            margin-bottom: 50px;
         }
 
         h2::after {
@@ -97,7 +125,7 @@ section {
 
         p {
             align-self: center;
-            margin-bottom: 0;
+            margin-bottom: 30px;
             width: 80%;
             font-size: 20px;
             letter-spacing: 1.2px;
@@ -106,8 +134,32 @@ section {
 }
 
 /****************************
+*         About Us          *
+****************************/
+
+
+
+
+
+
+
+
+
+/****************************
+*            Team           *
+****************************/
+
+
+
+
+
+
+
+
+/****************************
 *        Gallery            *
 ****************************/
+
 
 .ym-gallery-section {
     padding-bottom: 50px;
@@ -116,20 +168,68 @@ section {
     .section-title h2 {
         color: #fff;
     }
+
     .section-title h2::after {
         background-color: #fff;
         width: 50px;
         left: calc(50% - 25px);
     }
 
-    /* .ym-gallery-item{
+    .ym-gallery-item {
+        /* position: relative; */
 
-        
-        img{
-            object-fit: cover;
-            
+
+
+        .ym-gallery-text {
+
+            visibility: hidden;
+
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+            background-color: rgba(211, 44, 44, 0.8);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            color: white;
+
+            h5 {
+                font-size: 30px;
+            }
+
+            p.addr {
+                font-size: 24px;
+
+            }
+
+            .addr-city {
+                font-size: 20px;
+            }
+
+            i {
+                font-size: 30px;
+            }
         }
-    } */
+    }
+
+    .ym-gallery-item:hover {
+        .ym-gallery-text {
+            visibility: visible;
+        }
+    }
+
+
+
+
+
+
+
+
+
 }
 
 /****************************
@@ -137,19 +237,83 @@ section {
 ****************************/
 
 .ym-laboratory-section {
-    .accreditation {
-        line-height: 10px;
+
+    .ym-laboratory-cards {
+        margin-top: 50px;
+
+        .ym-laboratory-card {
+
+            
+            .ym-laboratory-card-content {
+
+                border: 1px solid rgba(0,0,0,0.2);
+
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                margin-top: 10px;
+                margin-bottom: 10px;
+
+
+
+                .ym-laboratory-card-icon {
+                    margin-left: 10px;
+                    font-size: 50px;
+                    margin-right: 20px;
+                }
+
+                .laboratory-card-content-text {
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    margin-left: 40px;
+                    margin-top: 20px;
+                }
+
+
+                button {
+                    visibility: hidden;
+                    font-size: 20px;
+                    margin-left: auto;
+                }
+            }
+        }
+
+
+        .ym-laboratory-card-content:hover{
+            background-color: rgba(196, 0, 0,0.9);
+            color: white;
+            
+            button{
+                visibility: visible;
+                background-color: white;
+                margin-right: 0;
+            }
+
+
+
+        }
+
+
+
     }
+
+
+
 }
 
 .ym-rnd-section {
     background: url("https://www.tuvsud.com/-/media/global/images/industries/industry-manufacturing/ds-smart-industry-readiness-index.png?extension=webp&h=365&w=1280&la=en-IN&hash=3D5605704E1EE192C6288EF471892157");
     background-repeat: no-repeat;
-    background-size: 200%;
-    background-position: -200px -200px;
+    background-size: cover;
     color: #fff;
+    margin-top: 70px;
 
-    
+
 
     .box {
         height: 150px;
@@ -157,13 +321,14 @@ section {
         border: 1px solid black;
         margin: 10px 20px;
     }
+
     .rnd-card {
 
         padding: 10px;
         padding-bottom: 0;
         padding-left: 10px;
         padding-right: 10px;
-        
+
 
         div {
             border: 1px solid white;
@@ -171,14 +336,14 @@ section {
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            
+
             i:first-child {
                 color: white;
                 font-size: 50px;
                 margin-top: 20px;
                 margin-bottom: 20px;
             }
-            
+
             p {
                 text-align: center;
                 padding-left: 20px;
@@ -187,7 +352,7 @@ section {
                 font-size: 30px;
                 margin-bottom: 20px;
             }
-            
+
             i:last-child {
                 visibility: hidden;
                 padding: 10px;
@@ -196,19 +361,21 @@ section {
             }
         }
     }
-    
-    .rnd-card:hover{
-        div{
-            background-color: white;
-            
 
-            i:first-child{
+    .rnd-card:hover {
+        div {
+            background-color: white;
+
+
+            i:first-child {
                 color: red;
             }
-            p{
+
+            p {
                 color: black;
             }
-            i:last-child{
+
+            i:last-child {
                 visibility: visible;
                 background-color: #a81f00;
                 color: white;
@@ -218,13 +385,14 @@ section {
 
         }
     }
-    
-    
-    
+
+
+
 }
 
 .ym-rft-section {
     padding-bottom: 50px;
+
     .box {
         height: 150px;
         width: 150px;
@@ -244,22 +412,24 @@ section {
         padding-left: 10px;
         padding-right: 10px;
         color: wheat;
-        
+
 
         div {
             border: 1px solid black;
+            height: 100%;
+
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            
+
             i:first-child {
                 color: #a81f00;
                 font-size: 50px;
                 margin-top: 20px;
                 margin-bottom: 20px;
             }
-            
+
             p {
                 text-align: center;
                 padding-left: 20px;
@@ -268,7 +438,7 @@ section {
                 font-size: 30px;
                 margin-bottom: 20px;
             }
-            
+
             i:last-child {
                 padding: 10px;
                 background-color: #a81f00;
@@ -277,18 +447,20 @@ section {
         }
     }
 
-    .rft-card:hover{
-        div{
+    .rft-card:hover {
+        div {
             background-color: var(--color-red);
-            
 
-            i:first-child{
+
+            i:first-child {
                 color: white;
             }
-            p{
+
+            p {
                 color: white;
             }
-            i:last-child{
+
+            i:last-child {
                 background-color: white;
                 color: #a81f00;
 
@@ -297,14 +469,16 @@ section {
 
         }
     }
-   
+
 }
 
 .ym-contact-us {
     background-color: rgb(235, 232, 232);
-    .section-title{
+
+    .section-title {
         margin-bottom: 0;
     }
+
     .contact-info {
         padding: 30px 0 30px 70px;
         background-color: var(--color-red);
@@ -314,6 +488,7 @@ section {
             margin-bottom: 30px;
             margin-top: 30px;
         }
+
         p {
             /* line-height: 5px; */
         }
@@ -325,13 +500,17 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 30px;
-    color: white;
-    background: url("../img/dark-purple-pink-gradient-blur-texture-vector.jpg");
-    font-size: 20px;
 
-    p {
-    }
+    padding-bottom: 30px;
+
+    background: url("../img/dark-purple-pink-gradient-blur-texture-vector.jpg");
+    background: url("https://images.unsplash.com/photo-1586383236267-0de7b105f5e0?q=80&w=1430&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position-y: -400px; */
+
+    font-size: 20px;
+    color: white;
 
     input,
     textarea {
@@ -354,10 +533,12 @@ section {
 .ym-footer {
     padding-top: 50px;
     padding-bottom: 50px;
+
     .footer-img {
         width: 200px;
         margin-bottom: 30px;
     }
+
     p {
         color: grey;
         font-size: 12px;
