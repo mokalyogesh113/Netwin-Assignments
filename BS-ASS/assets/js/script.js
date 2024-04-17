@@ -1,7 +1,6 @@
 $(function () {
 
     // HANDLE STICKY HEADER
-    console.log($(".ym-about-us-section").css("margin-top"))
 
     $(document).on("scroll", function () {
         const $nav = $("#navbar")
@@ -9,6 +8,7 @@ $(function () {
         if ($(this).scrollTop() > height) {
             $nav.addClass('fixed-nav');
             $("#about-us").css("margin-top", `${$nav.height()}px`)
+            console.log("stick")
         } else {
             $nav.removeClass('fixed-nav');
             $("#about-us").css("margin-top", `${0}px`)
@@ -18,9 +18,21 @@ $(function () {
 
     // ABOUT US CONTINUE READING BUTTON
 
+    let readingExapanded = false;
     $("#about-us-hidden").hide() // Initially content will be hidden
     $("#about-continue-read-btn").on("click", function () {
+        console.log("Hello ")
         $("#about-us-hidden").slideToggle();
+
+        readingExapanded = !readingExapanded;
+        if(readingExapanded){
+            $("#about-continue-read-btn").html("Read Less")
+        } else{
+            $("#about-continue-read-btn").html("Continue Reading")
+        }
+        
+        
+        
     });
 
 

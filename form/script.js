@@ -81,6 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", (event) => {
         event.preventDefault();
 
+        if (!validateFields()) {
+            return;
+        }
+
         const newRow = document.createElement("tr");
         var formData = {};
 
@@ -122,6 +126,41 @@ document.addEventListener("DOMContentLoaded", () => {
         // RESET THE FORM
         form.reset();
     });
+
+
+    const errorMsg = document.createElement("p");
+    errorMsg.className = "error-msg";
+    
+    // VALIDATION
+    function validateFields() {
+        let flag = true
+
+        
+        
+        
+        // NAME
+        // fname
+        const fname = form.querySelector("#firstName")
+        if(!fname){
+            printError(fname , "Enter Data")
+        }
+
+
+
+
+        // EMAIL
+        // PHONE
+        // ADDRESS
+
+
+
+
+
+
+        return flag;
+    }
+
+
 
     // ADD THE DATA TO THE TABLE
     const appendToTable = (data) => {
@@ -203,28 +242,26 @@ document.addEventListener("DOMContentLoaded", () => {
         const xhttp = new XMLHttpRequest();
         xhttp.open("GET", "info.txt");
 
-        xhttp.onload = function() {
+        xhttp.onload = function () {
             const data = JSON.parse(this.responseText);
 
             deleteExtraFields();
-            
 
-            for(key in data){
+
+            for (key in data) {
                 console.log(`${key} :- ${data[key]}`)
-                if(key=="email")
-                {
+                if (key == "email") {
                     form.querySelector(`input[name=${key}]`).value = data[key][0];
-                } else if(key == "address"){                    
-                    for(addrKey in data[key][0])
-                    {
+                } else if (key == "address") {
+                    for (addrKey in data[key][0]) {
                         // console.log(addre)
                         form.querySelector(`input[name=${addrKey}]`).value = data[key][0][addrKey];
                     }
-                    
-                } else{
+
+                } else {
                     form.querySelector(`input[name=${key}]`).value = data[key];
                 }
-                
+
                 console.log(`${key} :- ${data[key]}`)
             }
 
@@ -235,3 +272,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 });
+
+function fillData() {
+    const form = document.querySelector("#my-form");
+    form.querySelector("#firstName").value = "Yogesh";
+    form.querySelector("#lastName").value = "Mokal";
+    form.querySelector("#email").value = "mokalyogesh113@gmail.com"
+    form.querySelector("#phone").value = "1234567890"
+    form.querySelector("#street").value = "15, Amrut Nagar";
+    form.querySelector("#city").value = "Pachora";
+    form.querySelector("#country").value = "India";
+    form.querySelector("#state").value = "Maharashtra"
+    form.querySelector("#zipcode").value = "42420";
+}

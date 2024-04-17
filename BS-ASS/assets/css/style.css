@@ -16,16 +16,81 @@ body {
 
 .ym-header {
     height: 80vh;
-    background-image: url("../img/header/banner-costruttori.jpg");
+    min-height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid black;
+    
+    /* position: relative; */
 
-    
-    
-    
-    
-    
-    
-    
-    
+    .ym-header-logo{
+        position: absolute;
+        top: 0; left: 0;
+        width: 20%;
+        padding: 10px 25px 10px 30px;
+        background-color: white;
+        border-radius: 0 0 30px 0;
+        z-index: 100;
+    }
+
+    .ym-corousel-content{
+        height: 100%;
+        width: 100%;
+        
+        
+        /* filter: brightness(100%) contrast(50%); */
+        background:   url('../img/header/home-slider-ricera-sviluppo.jpg'), rgba(0, 0, 0, 0.5);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position-y: -200px;  
+        
+
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        
+        .ym-corousel-btns{
+            z-index: 10000;
+            color: rebeccapurple;
+            border: 1xp solid black;
+            cursor: pointer;
+        }
+
+        .ym-corousel-slide{
+
+            height: 100%;
+            width: 100%;
+            
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            z-index: 500;
+
+
+            h1{
+                text-transform: uppercase;
+                font-size: 55px ;
+                color: whitesmoke;
+            }
+
+            h1 span{
+                color: var(--color-red);
+            }
+
+            p{
+                color: whitesmoke;
+                width: 50%;
+                text-align: justify;
+                text-align-last: center;
+            }
+        }   
+    }
 }
 
 
@@ -57,6 +122,10 @@ body {
     padding: 0;
     text-transform: uppercase;
 
+
+    /* position: sticky;
+    top: 0; */
+
     .nav-brand {
         /* border: 1px solid black; */
         width: 200px;
@@ -80,7 +149,7 @@ body {
 
 .fixed-nav {
     position: fixed;
-    top: 0%;
+    top: 0;
     width: 100%;
     z-index: 100;
 }
@@ -90,7 +159,8 @@ body {
 ****************************/
 
 section {
-    padding-top: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 
     .section-title {
         display: flex;
@@ -148,6 +218,14 @@ section {
 /****************************
 *            Team           *
 ****************************/
+
+.ym-team-section{
+    background-color: rebeccapurple ;
+
+
+
+}
+
 
 
 
@@ -311,7 +389,6 @@ section {
     background-repeat: no-repeat;
     background-size: cover;
     color: #fff;
-    margin-top: 70px;
 
 
 
@@ -474,6 +551,7 @@ section {
 
 .ym-contact-us {
     background-color: rgb(235, 232, 232);
+    padding-bottom: 0;
 
     .section-title {
         margin-bottom: 0;
@@ -507,6 +585,7 @@ section {
     background: url("https://images.unsplash.com/photo-1586383236267-0de7b105f5e0?q=80&w=1430&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     /* background-position-y: -400px; */
 
     font-size: 20px;

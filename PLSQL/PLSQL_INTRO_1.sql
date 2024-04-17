@@ -267,7 +267,6 @@ BEGIN
 END;
 
 
-
 call calculate_grand_total('a01');  -- Total Updated !....
 call calculate_grand_total('a21');  -- No record found with the code a21
 
@@ -597,8 +596,7 @@ select * from orders;
 /*
     6. Write statement which check whether QOH of an item is more than 500 or not. If it is more than 500 display 'Sufficient stock' else display 'Not Sufficient stock' along with the QOH value.
 */
-
-
+    select * , case when QOH > 500 then 'Sufficient Stock' else 'Not Sufficient Stock' end as 'Stock Availability' from items;
 
 
 /*
