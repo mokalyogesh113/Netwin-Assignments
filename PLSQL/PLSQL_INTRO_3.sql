@@ -1,13 +1,29 @@
 /*
 HANDLING EXCEPTIONS
-    syntax for exception handling
+  2 types of Exceptions
+    - System Defined Exceptions
+        ZERO_DIVIDE
+        CASE_NOT_FOUND
+        VALUE_ERROR
+        DUP_VAL_ON_IDX
+        INVALID_CURSOR
+        LOGIN_DENIED
+        NO_DATA_FOUND
+        NOT_LOGGED_ON
+        PROGRAM_ERROR
+        ROWTYPE_MISMATCH
+        SELF_IS_NULL
+        STORAGE_ERROR
+        TOO_MANY_ROWS            
+    - User-Defined Exceptions
+        syntax for exception handling
 
-        begin
-            select.......
-            .............
-        EXCEPITON
-            WHEN <exception_name> then
-        end;
+            begin
+                select.......
+                .............
+            EXCEPITON
+                WHEN <exception_name> then
+            end;
 */
 
 
