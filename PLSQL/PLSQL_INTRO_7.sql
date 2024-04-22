@@ -255,27 +255,188 @@ END;
 -- Display the discrepancy between those two values iif any
 -- If the quantity ordered < 10 --> update quantity and set to 10 as minimum order of 10 is accepted only.
 
-create or replace procedure proc_disp_ord_details(p_order_id) AS
-    
+create or replace procedure proc_disp_ord_details(p_order_id int) AS
+    cursor c1_orders is select * from orders where order_id = p_order_id;
+    r_orders c1_orders%ROWTYPE;
 
 BEGIN
+    open c1_orders;
 
+    LOOP
+        FETCH c1_orders INTO r_orders;
+        EXIT WHEN c1_orders%NOTFOUND;
 
-
+        DBMS_OUTPUT.PUT_LINE('---- Details -----');
+        DBMS_OUTPUT.PUT_LINE('Order Id'|| r_orders.order_id);
+        DBMS_OUTPUT.PUT_LINE('Order Date:- '|| r_orders.order_date);
+        DBMS_OUTPUT.PUT_LINE('Shipment Date :- '|| r_orders.Shipment_date);
+    END LOOP;
 END;
-
-
-
 
 
 /*
 3.
     Write a cursor which accepts a cust-id and item-id and display the total quantity ordered for that item by that customer. Also find out the total quantity of that item sold and percentage share of that particular customer in the total saled for the item.
     */
+
+-- Cursor 
+-- Cust id & item id 
+-- Quantity ordered for that item by that customer.
+-- Quantity of item sold and 
+-- percentage share of that particular customer in the total saled for the item
+
+{
+        
+    create table orders2
+    (
+        order_id INT primary key,
+        cust_id INT,
+        item_id INT,
+        quantity INT
+    );
+
+    INSERT INTO orders2 VALUES (1, 101, 201, 3);
+    INSERT INTO orders2 VALUES (2, 102, 202, 2);
+    INSERT INTO orders2 VALUES (3, 103, 203, 1);
+    INSERT INTO orders2 VALUES (4, 104, 204, 5);
+    INSERT INTO orders2 VALUES (5, 105, 205, 2);
+    INSERT INTO orders2 VALUES (6, 106, 206, 3);
+    INSERT INTO orders2 VALUES (7, 107, 207, 4);
+    INSERT INTO orders2 VALUES (8, 108, 208, 2);
+    INSERT INTO orders2 VALUES (9, 109, 209, 1);
+    INSERT INTO orders2 VALUES (10, 110, 210, 3);
+    INSERT INTO orders2 VALUES (11, 101, 201, 4);
+    INSERT INTO orders2 VALUES (12, 102, 202, 2);
+    INSERT INTO orders2 VALUES (13, 103, 203, 1);
+    INSERT INTO orders2 VALUES (14, 104, 204, 3);
+    INSERT INTO orders2 VALUES (15, 105, 205, 2);
+    INSERT INTO orders2 VALUES (16, 106, 206, 5);
+    INSERT INTO orders2 VALUES (17, 107, 207, 3);
+    INSERT INTO orders2 VALUES (18, 108, 208, 2);
+    INSERT INTO orders2 VALUES (19, 109, 209, 1);
+    INSERT INTO orders2 VALUES (20, 110, 210, 4);
+    INSERT INTO orders2 VALUES (21, 101, 201, 3);
+    INSERT INTO orders2 VALUES (22, 102, 202, 1);
+    INSERT INTO orders2 VALUES (23, 103, 203, 2);
+    INSERT INTO orders2 VALUES (24, 104, 204, 4);
+    INSERT INTO orders2 VALUES (25, 105, 205, 2);
+    INSERT INTO orders2 VALUES (26, 106, 206, 3);
+    INSERT INTO orders2 VALUES (27, 107, 207, 5);
+    INSERT INTO orders2 VALUES (28, 108, 208, 1);
+    INSERT INTO orders2 VALUES (29, 109, 209, 2);
+    INSERT INTO orders2 VALUES (30, 110, 210, 3);
+    INSERT INTO orders2 VALUES (31, 101, 201, 2);
+    INSERT INTO orders2 VALUES (32, 102, 202, 3);
+    INSERT INTO orders2 VALUES (33, 103, 203, 1);
+    INSERT INTO orders2 VALUES (34, 104, 204, 4);
+    INSERT INTO orders2 VALUES (35, 105, 205, 2);
+    INSERT INTO orders2 VALUES (36, 106, 206, 3);
+    INSERT INTO orders2 VALUES (37, 107, 207, 4);
+    INSERT INTO orders2 VALUES (38, 108, 208, 2);
+    INSERT INTO orders2 VALUES (39, 109, 209, 1);
+    INSERT INTO orders2 VALUES (40, 110, 210, 5);
+    INSERT INTO orders2 VALUES (41, 101, 201, 3);
+    INSERT INTO orders2 VALUES (42, 102, 202, 2);
+    INSERT INTO orders2 VALUES (43, 103, 203, 1);
+    INSERT INTO orders2 VALUES (44, 104, 204, 5);
+    INSERT INTO orders2 VALUES (45, 105, 205, 2);
+    INSERT INTO orders2 VALUES (46, 106, 206, 3);
+    INSERT INTO orders2 VALUES (47, 107, 207, 4);
+    INSERT INTO orders2 VALUES (48, 108, 208, 2);
+    INSERT INTO orders2 VALUES (49, 109, 209, 1);
+    INSERT INTO orders2 VALUES (50, 110, 210, 3);
+    INSERT INTO orders2 VALUES (51, 101, 201, 4);
+    INSERT INTO orders2 VALUES (52, 102, 202, 2);
+    INSERT INTO orders2 VALUES (53, 103, 203, 1);
+    INSERT INTO orders2 VALUES (54, 104, 204, 3);
+    INSERT INTO orders2 VALUES (55, 105, 205, 2);
+    INSERT INTO orders2 VALUES (56, 106, 206, 5);
+    INSERT INTO orders2 VALUES (57, 107, 207, 3);
+    INSERT INTO orders2 VALUES (58, 108, 208, 2);
+    INSERT INTO orders2 VALUES (59, 109, 209, 1);
+    INSERT INTO orders2 VALUES (60, 110, 210, 4);
+    INSERT INTO orders2 VALUES (61, 101, 201, 3);
+    INSERT INTO orders2 VALUES (62, 102, 202, 1);
+    INSERT INTO orders2 VALUES (63, 103, 203, 2);
+    INSERT INTO orders2 VALUES (64, 104, 204, 4);
+    INSERT INTO orders2 VALUES (65, 105, 205, 2);
+    INSERT INTO orders2 VALUES (66, 106, 206, 3);
+    INSERT INTO orders2 VALUES (67, 107, 207, 5);
+    INSERT INTO orders2 VALUES (68, 108, 208, 1);
+    INSERT INTO orders2 VALUES (69, 109, 209, 2);
+    INSERT INTO orders2 VALUES (70, 110, 210, 3);
+    INSERT INTO orders2 VALUES (71, 101, 201, 2);
+    INSERT INTO orders2 VALUES (72, 102, 202, 3);
+    INSERT INTO orders2 VALUES (73, 103, 203, 1);
+    INSERT INTO orders2 VALUES (74, 104, 204, 4);
+    INSERT INTO orders2 VALUES (75, 105, 205, 2);
+    INSERT INTO orders2 VALUES (76, 106, 206, 3);
+    INSERT INTO orders2 VALUES (77, 107, 207, 4);
+    INSERT INTO orders2 VALUES (78, 108, 208, 2);
+    INSERT INTO orders2 VALUES (79, 109, 209, 1);
+    INSERT INTO orders2 VALUES (80, 110, 210, 5);
+    INSERT INTO orders2 VALUES (81, 101, 201, 3);
+    INSERT INTO orders2 VALUES (82, 102, 202, 2);
+    INSERT INTO orders2 VALUES (83, 103, 203, 1);
+    INSERT INTO orders2 VALUES (84, 104, 204, 5);
+    INSERT INTO orders2 VALUES (85, 105, 205, 2);
+    INSERT INTO orders2 VALUES (86, 106, 206, 3);
+    INSERT INTO orders2 VALUES (87, 107, 207, 4);
+    INSERT INTO orders2 VALUES (88, 108, 208, 2);
+    INSERT INTO orders2 VALUES (89, 109, 209, 1);
+    INSERT INTO orders2 VALUES (90, 110, 210, 3);
+    INSERT INTO orders2 VALUES (91, 101, 201, 4);
+    INSERT INTO orders2 VALUES (92, 102, 202, 2);
+    INSERT INTO orders2 VALUES (93, 103, 203, 1);
+    INSERT INTO orders2 VALUES (94, 104, 204, 3);
+    INSERT INTO orders2 VALUES (95, 105, 205, 2);
+    INSERT INTO orders2 VALUES (96, 106, 206, 5);
+    INSERT INTO orders2 VALUES (97, 107, 207, 3);
+    INSERT INTO orders2 VALUES (98, 108, 208, 2);
+    INSERT INTO orders2 VALUES (99, 109, 209, 1);
+    INSERT INTO orders2 VALUES (100, 110, 210, 4);
+
+    update orders2
+    set item_id = FLOOR(DBMS_RANDOM.VALUE(201, 231));
+
+    update orders2
+    set cust_id = FLOOR(DBMS_RANDOM.VALUE(101,110));
+}
+    
 DECLARE
- 
+    cursor c1(p_cust_id int, p_item_id int) is 
+        select * from orders2 where p_item_id = item_id;
+    
+    r1 c1%rowtype;
+    
+    v_total_quantity_sold int := 0;
+    v_total_quantity_by_customer int := 0;
+    v_total_percentage float;
 BEGIN
 
+    open c1(&Enter_customer_id , &Enter_Item_id);
+    LOOP
+        FETCH c1 into r1;
+        EXIT WHEN c1%NOTFOUND;
 
+        v_total_quantity_sold := v_total_quantity_sold +  r1.quantity;
 
+        if r1.cust_id = &Enter_customer_id then
+            v_total_quantity_by_customer := v_total_quantity_by_customer + r1.quantity;
+        end if;
+    END LOOP;
+
+    v_total_percentage := (v_total_quantity_by_customer / v_total_quantity_sold) * 100;
+    
+    
+    DBMS_OUTPUT.PUT_LINE('===============================================================================================');
+    DBMS_OUTPUT.PUT_LINE('Customer Id:- ' || &Enter_customer_id);
+    DBMS_OUTPUT.PUT_LINE('Item Id :-  '|| &Enter_Item_id);
+    DBMS_OUTPUT.PUT_LINE('Total Quantity orderd by customer :- ' || v_total_quantity_by_customer );
+    DBMS_OUTPUT.PUT_LINE('Item total Quantity sold  :- ' || v_total_quantity_sold );
+    DBMS_OUTPUT.PUT_LINE('Percentage share of that paprticular customer in the total saled for the item  :- ' || ROUND(v_total_percentage,2) );
+    DBMS_OUTPUT.PUT_LINE('===============================================================================================');
+Exception
+    when others then
+         DBMS_OUTPUT.PUT_LINE(SQLCODE || '  ' || SUBSTR(SQLERRM, 1, 64));
 END;
